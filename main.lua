@@ -4461,7 +4461,7 @@ end)
 
 ADD_COMMAND('unfiltered','unfiltered',{},
 function(ARGS, SPEAKER)
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/dex.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/unfiltered.lua"))()
 end)
 
 ADD_COMMAND('remotespy','remotespy',{},
