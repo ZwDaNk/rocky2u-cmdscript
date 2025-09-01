@@ -33,7 +33,6 @@ local CREDITS = [[
  java - for making this remaster
  check cashed - fixes + maintenance
  Alex Wang - ;stools and Unfiltered
- LSFrox - ;fekill
  All of the people who made the scripts for the cmds
  etc etc
 ]]
@@ -495,7 +494,7 @@ function OPEN_MAIN()
 		end
 	end)
 
-	local FUN = {'balefire', 'swastika', 'trowel', 'path giver', 'orbital strike', 'furry rapist'}
+	local FUN = {'balefire', 'swastika', 'trowel', 'path giver', 'orbital strike', 'furry rapist', 'doge army', 'yourmom', 'holy wrench', 'john doe'}
 	local Y_FUN = 5
 	for i,v in pairs(FUN) do
 		NEW('TextLabel',{Name = v, BackgroundColor3 = C3(255, 255, 255), BackgroundTransparency = 1, Position = UDim2.new(0, 0, 0, Y_FUN), Size = UDim2.new(1, -50, 0, 25), Font = 'SourceSansBold', Text = ' ' .. v, TextColor3 = C3(0, 0, 0), TextSize = 24, TextTransparency = 0.25, TextXAlignment = 'Left', Parent = HOLDERS.fun})
@@ -512,6 +511,10 @@ function OPEN_MAIN()
 			elseif v.Name == 'path giver' then LOAD_PATH()
 			elseif v.Name == 'orbital strike' then LOAD_STRIKE()
 			elseif v.Name == 'furry rapist' then LOAD_FURRY()
+			elseif v.Name == 'doge army' then loadstring(game:HttpGet("https://github.com/ZwDaNk/rocky2u-cmdscript/blob/main/data/doge.lua"))()
+			elseif v.Name == 'yourmom' then loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/yourmom.lua"))()
+			elseif v.Name == 'holy wrench' then loadstring(game:HttpGet("https://github.com/ZwDaNk/rocky2u-cmdscript/blob/main/data/holywrench.lua"))()
+			elseif v.Name == 'john doe' then loadstring(game:HttpGet("https://github.com/ZwDaNk/rocky2u-cmdscript/blob/main/data/johndoe.lua"))()
 			end
 		end)
 	end
