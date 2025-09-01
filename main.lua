@@ -22,7 +22,7 @@ function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 local VERSION = '1.2R'
 local UPDATED = '8/29/2025'
 local CHANGELOG = {
-        '2 new commands',
+        '5 new commands',
         'made stools & rtools work in FE',
         'cool ASCII shit I guess',
         ';nuke is now more accurate'
@@ -32,7 +32,8 @@ local CREDITS = [[
  Rocky2u - lol
  java - for making this remaster
  check cashed - fixes + maintenance
- Alex Wang - FE stealtools
+ Alex Wang - ;stools and Unfiltered
+ LSFrox - ;fekill
  All of the people who made the scripts for the cmds
  etc etc
 ]]
@@ -4452,10 +4453,24 @@ function(ARGS,SPEAKER)
     end
 end)
 
+--// custom funcs required
 ADD_COMMAND('dex','dex',{},
 function(ARGS, SPEAKER)
-	-- TBA
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/dex.lua"))()
 end)
+
+ADD_COMMAND('unfiltered','unfiltered',{},
+function(ARGS, SPEAKER)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/dex.lua"))()
+end)
+
+ADD_COMMAND('remotespy','remotespy',{},
+function(ARGS, SPEAKER)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/remotespy.lua"))()
+	NOTIFY('Check console!', 255, 255, 255)
+end)
+
+--// other misc shit
 
 function OPEN_COMMANDS()
 	SETH_MAIN.main.holder.Size = UDim2.new(1, 25, 12, 30)
