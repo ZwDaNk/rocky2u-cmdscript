@@ -22,7 +22,9 @@ function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 local VERSION = '1.2.1'
 local UPDATED = '8/29/2025'
 local CHANGELOG = {
-        'fixed loadstring-based fun stuff'
+        'fixed loadstring-based fun stuff',
+	    'renamed ;thwomp to ;crush since revivals are retarded',
+	    'fixed ;swagify'
 }
 
 local CREDITS = [[
@@ -1203,11 +1205,8 @@ end
 
 function SWAG(PLAYER)
 	for i,v in pairs(PLAYER.Character:GetChildren()) do
-		if v:IsA('Shirt') or v:IsA('Pants') or v:IsA('Accessory') or v:IsA('CharacterMesh') then
+		if v:IsA('Shirt') or v:IsA('Pants') or v:IsA('ShirtGraphic') then
 			v:destroy()
-		elseif v:IsA('ShirtGraphic') then
-			v.Archivable = false
-			v.Graphic = ''
 		end
 	end
 	if PLAYER.Character:FindFirstChild('Shirt Graphic') then
