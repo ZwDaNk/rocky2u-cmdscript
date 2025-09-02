@@ -19,13 +19,10 @@ local MOTD = "I threw some rocks"
 function _G.ADD_ADMIN(ID) table.insert(ADMINS, ID) end
 function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 
-local VERSION = '1.2R'
+local VERSION = '1.2.1'
 local UPDATED = '8/29/2025'
 local CHANGELOG = {
-        '5 new commands',
-        'made stools & rtools work in FE',
-        'cool ASCII shit I guess',
-        ';nuke is now more accurate'
+        'fixed loadstring-based fun stuff'
 }
 
 local CREDITS = [[
