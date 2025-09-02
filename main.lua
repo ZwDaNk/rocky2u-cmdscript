@@ -511,10 +511,10 @@ function OPEN_MAIN()
 			elseif v.Name == 'path giver' then LOAD_PATH()
 			elseif v.Name == 'orbital strike' then LOAD_STRIKE()
 			elseif v.Name == 'furry rapist' then LOAD_FURRY()
-			elseif v.Name == 'doge army' then loadstring(game:HttpGet("https://github.com/ZwDaNk/rocky2u-cmdscript/blob/main/data/doge.lua"))()
-			elseif v.Name == 'yourmom' then loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/yourmom.lua"))()
-			elseif v.Name == 'holy wrench' then loadstring(game:HttpGet("https://github.com/ZwDaNk/rocky2u-cmdscript/blob/main/data/holywrench.lua"))()
-			elseif v.Name == 'john doe' then loadstring(game:HttpGet("https://github.com/ZwDaNk/rocky2u-cmdscript/blob/main/data/johndoe.lua"))()
+			elseif v.Name == 'doge army' then LOAD_DOGE()
+			elseif v.Name == 'yourmom' then LOAD_YOMAMAHAHA()
+			elseif v.Name == 'holy wrench' then LOAD_HW()
+			elseif v.Name == 'john doe' then LOAD_JD()
 			end
 		end)
 	end
@@ -527,6 +527,23 @@ function OPEN_MAIN()
 end
 
 LOAD_DATA()
+
+--// LOADSTRINGS
+function LOAD_DOGE()
+	loadstring(game:HttpGet("https://github.com/ZwDaNk/rocky2u-cmdscript/blob/main/data/doge.lua"))()
+end
+
+function LOAD_YOMAMAHAHA()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/yourmom.lua"))()
+end
+
+function LOAD_HW()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/holywrench.lua"))()
+end
+
+function LOAD_JD()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZwDaNk/rocky2u-cmdscript/refs/heads/main/data/johndoe.lua"))()
+end
 
 --/ TOOLS
 
