@@ -4409,7 +4409,7 @@ function(ARGS, SPEAKER)
 	end
 end)
 
-ADD_COMMAND('thwomp','thwomp [plr]',{},
+ADD_COMMAND('crush','crush [plr]',{'thwomp'},
 function(ARGS,SPEAKER)
     local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
     for _,v in pairs(PLAYERS) do
@@ -4422,16 +4422,10 @@ function(ARGS,SPEAKER)
                 local thwomp = Instance.new("Part", workspace)
                 thwomp.Size = Vector3.new(12,12,6)
                 thwomp.Position = torso.Position + Vector3.new(0,40,0)
+		        thwomp.Material = "Slate"
                 thwomp.Anchored = false
                 thwomp.CanCollide = true
                 thwomp.BrickColor = BrickColor.new("Medium stone grey")
-
-                local dfront = Instance.new("Decal", thwomp)
-                dfront.Texture = "http://www.roblox.com/asset/?id=153893499"
-                dfront.Face = "Front"
-                local dback = Instance.new("Decal", thwomp)
-                dback.Texture = "http://www.roblox.com/asset/?id=153893499"
-                dback.Face = "Back"
 
                 local thwompaugh = Instance.new("Sound", thwomp)
                 thwompaugh.SoundId = "rbxassetid://3123007321"
