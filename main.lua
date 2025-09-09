@@ -14,7 +14,7 @@
 
 local ADMINS = {game:GetService("Players").LocalPlayer.UserId}
 local BANS = {}
-local MOTD = "I threw some rocks"
+local MOTD = "Do a barrel roll!"
 
 function _G.ADD_ADMIN(ID) table.insert(ADMINS, ID) end
 function _G.ADD_BAN(ID) table.insert(BANS, ID) end
