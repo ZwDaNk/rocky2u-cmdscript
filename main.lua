@@ -19,12 +19,10 @@ local MOTD = "I threw some rocks"
 function _G.ADD_ADMIN(ID) table.insert(ADMINS, ID) end
 function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 
-local VERSION = '1.2.1'
-local UPDATED = '8/29/2025'
+local VERSION = '1.2.2'
+local UPDATED = '9/9/2025'
 local CHANGELOG = {
-        'fixed loadstring-based fun stuff',
-	    'renamed ;thwomp to ;crush since revivals are retarded',
-	    'fixed ;swagify'
+        ';coinflip'
 }
 
 local CREDITS = [[
@@ -4546,6 +4544,15 @@ end)
 ADD_COMMAND('motd','motd',{},
 function(ARGS, SPEAKER)
 	NOTIFY(MOTD, 255, 255, 255)
+end)
+
+ADD_COMMAND('coinflip','coinflip',{},
+function(ARGS, SPEAKER)
+	local HEADS = "Heads"
+	local TAILS = "Tails"
+	local RESULT = math.random(1, 2) == 1 and HEADS or TAILS
+	
+	NOTIFY(RESULT, 255, 255, 255)
 end)
 
 MOUSE.KeyDown:connect(function(key)
