@@ -19,10 +19,10 @@ local MOTD = "Do a barrel roll!"
 function _G.ADD_ADMIN(ID) table.insert(ADMINS, ID) end
 function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 
-local VERSION = '1.2.2-NCF'
+local VERSION = '1.2.3-NCF'
 local UPDATED = '9/8/2025'
 local CHANGELOG = {
-	    ';coinflip'
+	    'removed gear commands'
 }
 
 local CREDITS = [[
@@ -4118,90 +4118,6 @@ function(ARGS, SPEAKER)
             end
             tor.CFrame = tor.CFrame * CFrame.new(0, -500, 0)
             PCHAR.Humanoid.Health = 0
-        end
-    end
-end)
-
-ADD_COMMAND('sword','sword [plr]',{},
-function(ARGS, SPEAKER)
-    local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
-    for i,v in pairs(PLAYERS) do
-        local plr = _PLAYERS[v]
-        if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(125013769):GetChildren()[1]
-            asset.Parent = plr.Backpack
-        end
-    end
-end)
-
-ADD_COMMAND('pistol','pistol [plr]',{},
-function(ARGS, SPEAKER)
-    local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
-    for i,v in pairs(PLAYERS) do
-        local plr = _PLAYERS[v]
-        if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(95354288):GetChildren()[1]
-            asset.Parent = plr.Backpack
-        end
-    end
-end)
-
-ADD_COMMAND('lasergun','lasergun [plr]',{},
-function(ARGS, SPEAKER)
-    local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
-    for i,v in pairs(PLAYERS) do
-        local plr = _PLAYERS[v]
-        if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(130113146):GetChildren()[1]
-            asset.Parent = plr.Backpack
-        end
-    end
-end)
-
-ADD_COMMAND('shotgun','shotgun [plr]',{},
-function(ARGS, SPEAKER)
-    local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
-    for i,v in pairs(PLAYERS) do
-        local plr = _PLAYERS[v]
-        if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(94233344):GetChildren()[1]
-            asset.Parent = plr.Backpack
-        end
-    end
-end)
-
-ADD_COMMAND('snowball','snowball [plr]',{},
-function(ARGS, SPEAKER)
-    local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
-    for i,v in pairs(PLAYERS) do
-        local plr = _PLAYERS[v]
-        if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(19328185):GetChildren()[1]
-            asset.Parent = plr.Backpack
-        end
-    end
-end)
-
-ADD_COMMAND('tripmine','tripmine [plr]',{'subspacetripmine'},
-function(ARGS, SPEAKER)
-    local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
-    for i,v in pairs(PLAYERS) do
-        local plr = _PLAYERS[v]
-        if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(11999247):GetChildren()[1]
-            asset.Parent = plr.Backpack
-        end
-    end
-end)
-
-ADD_COMMAND('periastron','periastron [plr]',{},
-function(ARGS, SPEAKER)
-    local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
-    for i,v in pairs(PLAYERS) do
-        local plr = _PLAYERS[v]
-        if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(159229806):GetChildren()[1]
-            asset.Parent = plr.Backpack
         end
     end
 end)
