@@ -19,10 +19,10 @@ local MOTD = "Do a barrel roll!"
 function _G.ADD_ADMIN(ID) table.insert(ADMINS, ID) end
 function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 
-local VERSION = '1.2.2'
+local VERSION = '1.2.3'
 local UPDATED = '9/9/2025'
 local CHANGELOG = {
-        ';coinflip'
+        'fixed gear commands for 2016M+'
 }
 
 local CREDITS = [[
@@ -4149,7 +4149,7 @@ function(ARGS, SPEAKER)
     for i,v in pairs(PLAYERS) do
         local plr = _PLAYERS[v]
         if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(125013769):GetChildren()[1]
+            local asset = game:GetObjects("rbxassetid://125013769")[1]
             asset.Parent = plr.Backpack
         end
     end
@@ -4161,7 +4161,7 @@ function(ARGS, SPEAKER)
     for i,v in pairs(PLAYERS) do
         local plr = _PLAYERS[v]
         if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(95354288):GetChildren()[1]
+            local asset = game:GetObjects("rbxassetid://95354288")[1]
             asset.Parent = plr.Backpack
         end
     end
@@ -4173,7 +4173,7 @@ function(ARGS, SPEAKER)
     for i,v in pairs(PLAYERS) do
         local plr = _PLAYERS[v]
         if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(130113146):GetChildren()[1]
+            local asset = game:GetObjects("rbxassetid://130113146")[1]
             asset.Parent = plr.Backpack
         end
     end
@@ -4185,7 +4185,7 @@ function(ARGS, SPEAKER)
     for i,v in pairs(PLAYERS) do
         local plr = _PLAYERS[v]
         if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(94233344):GetChildren()[1]
+            local asset = game:GetObjects("rbxassetid://94233344")[1]
             asset.Parent = plr.Backpack
         end
     end
@@ -4197,7 +4197,7 @@ function(ARGS, SPEAKER)
     for i,v in pairs(PLAYERS) do
         local plr = _PLAYERS[v]
         if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(19328185):GetChildren()[1]
+            local asset = game:GetObjects("rbxassetid://19328185")[1]
             asset.Parent = plr.Backpack
         end
     end
@@ -4209,7 +4209,7 @@ function(ARGS, SPEAKER)
     for i,v in pairs(PLAYERS) do
         local plr = _PLAYERS[v]
         if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(11999247):GetChildren()[1]
+            local asset = game:GetObjects("rbxassetid://11999247")[1]
             asset.Parent = plr.Backpack
         end
     end
@@ -4221,7 +4221,7 @@ function(ARGS, SPEAKER)
     for i,v in pairs(PLAYERS) do
         local plr = _PLAYERS[v]
         if plr and plr:FindFirstChild("Backpack") then
-            local asset = game:GetService("InsertService"):LoadAsset(159229806):GetChildren()[1]
+            local asset = game:GetObjects("rbxassetid://159229806")[1]
             asset.Parent = plr.Backpack
         end
     end
