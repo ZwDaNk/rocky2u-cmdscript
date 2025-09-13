@@ -19,10 +19,10 @@ local MOTD = "Do a barrel roll!"
 function _G.ADD_ADMIN(ID) table.insert(ADMINS, ID) end
 function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 
-local VERSION = '1.2.3'
-local UPDATED = '9/9/2025'
+local VERSION = '1.2.4'
+local UPDATED = '9/13/2025'
 local CHANGELOG = {
-        'fixed gear commands for 2016M+'
+        '4 new commands'
 }
 
 local CREDITS = [[
@@ -4459,6 +4459,132 @@ function(ARGS,SPEAKER)
             end
         end
     end
+end)
+
+--// FE shit
+ADD_COMMAND('fekill', 'fekill [plr]', {}, function(ARGS, SPEAKER)
+    local players = getPlayer(ARGS[1], SPEAKER)
+    for _, v in pairs(players) do
+        -- illremember's cool fe kill script
+        local Target = gPlayers[v].Name
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+
+        LocalPlayer.Character.Humanoid.Name = 1
+        local l = LocalPlayer.Character["1"]:Clone()
+        l.Parent = LocalPlayer.Character
+        l.Name = "Humanoid"
+        wait(0.1)
+        LocalPlayer.Character["1"]:Destroy()
+
+        game.Workspace.CurrentCamera.CameraSubject = LocalPlayer.Character
+        LocalPlayer.Character.Animate.Disabled = true
+        wait(0.1)
+        LocalPlayer.Character.Animate.Disabled = false
+        LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+
+        for _, tool in pairs(LocalPlayer.Backpack:GetChildren()) do
+            LocalPlayer.Character.Humanoid:EquipTool(tool)
+            tool.CanBeDropped = true
+        end
+
+        wait(0.1)
+        local targetChar = Players[Target].Character
+        LocalPlayer.Character.HumanoidRootPart.CFrame = targetChar.HumanoidRootPart.CFrame
+        wait(0.1)
+        LocalPlayer.Character.HumanoidRootPart.CFrame = targetChar.HumanoidRootPart.CFrame
+        wait(0.2)
+        LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-10000, -100, -10000))
+    end
+end)
+
+ADD_COMMAND('fegod','fegod',{},
+function(ARGS, SPEAKER)
+    local lp = gPlayers.LocalPlayer
+    lp.Character.Humanoid.Name = 1
+    local l = lp.Character["1"]:Clone()
+    l.Parent = lp.Character
+    l.Name = "Humanoid"
+    wait(0.1)
+    lp.Character["1"]:Destroy()
+    workspace.CurrentCamera.CameraSubject = lp.Character
+    lp.Character.Animate.Disabled = true
+    wait(0.1)
+    lp.Character.Animate.Disabled = false
+    lp.Character.Humanoid.DisplayDistanceType = "None"
+end)
+
+ADD_COMMAND('feinvisible','feinvisible',{'feinvis'},
+function(ARGS, SPEAKER)
+    -- Elite1337#9377 & Timeless#4044
+    local Player = gPlayers.LocalPlayer
+
+    local function CheckRig()
+        if Player.Character then
+            local Humanoid = Player.Character:WaitForChild('Humanoid')
+            if Humanoid.RigType == Enum.HumanoidRigType.R15 then
+                return 'R15'
+            else
+                return 'R6'
+            end
+        end
+    end
+
+    local function InitiateInvis()
+        local Character = Player.Character
+        local StoredCF = Character.PrimaryPart.CFrame
+
+        local Part = Instance.new('Part', workspace)
+        Part.Size = Vector3.new(5,0,5)
+        Part.Anchored = true
+        Part.CFrame = CFrame.new(Vector3.new(9999,9999,9999))
+        Character.PrimaryPart.CFrame = Part.CFrame * CFrame.new(0,3,0)
+
+        spawn(function()
+            wait(3)
+            Part:Destroy()
+        end)
+
+        if CheckRig() == 'R6' then
+            local Clone = Character.HumanoidRootPart:Clone()
+            Character.HumanoidRootPart:Destroy()
+            Clone.Parent = Character
+        else
+            local Clone = Character.LowerTorso.Root:Clone()
+            Character.LowerTorso.Root:Destroy()
+            Clone.Parent = Character.LowerTorso
+        end
+    end
+
+    InitiateInvis()
+end)
+
+ADD_COMMAND('lplatform','lplatform',{'platform'}, 
+function(ARGS, SPEAKER)
+    local Players = game:GetService("Players")
+    local lp = Players.LocalPlayer
+
+    local p = Instance.new("Part")
+    p.Parent = workspace
+    p.Locked = true
+    p.BrickColor = BrickColor.new("White")
+    p.Size = Vector3.new(8, 1.2, 8)
+    p.Anchored = true
+
+    local m = Instance.new("CylinderMesh")
+    m.Scale = Vector3.new(1, 0.5, 1)
+    m.Parent = p
+
+    spawn(function()
+        while p and p.Parent and lp and lp.Character do
+            local char = lp.Character
+            local root = char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("Torso")
+            if root then
+                p.CFrame = CFrame.new(root.Position.X, root.Position.Y - 4, root.Position.Z)
+            end
+            wait()
+        end
+    end)
 end)
 
 --// custom funcs required
