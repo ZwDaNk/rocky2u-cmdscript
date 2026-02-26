@@ -1,11 +1,26 @@
-for _, v in pairs(workspace:GetDescendants()) do
+local function GetDescendants(parent) -- from louknt's backporting utility pack
+    local descendants = {}
+    local function rec(inst)
+        for _, child in ipairs(inst:GetChildren()) do
+            table.insert(descendants, child)
+            rec(child)
+        end
+    end
+    rec(parent)
+    return descendants
+end
+
+warn('Rocky2u+ RemotePrinter')
+warn('Made by Java')
+
+for _, v in pairs(GetDescendants(workspace)) do
     if v:IsA("RemoteEvent") then
-        print("Found RemoteEvent:", v:GetFullName())
+        print("[R2RP] Found RemoteEvent:", v:GetFullName())
     end
 end
 
-for _, v in pairs(workspace:GetDescendants()) do
+for _, v in pairs(GetDescendants(workspace)) do
     if v:IsA("RemoteFunction") then
-        print("Found RemoteFunction:", v:GetFullName())
+        print("[R2RP] Found RemoteFunction:", v:GetFullName())
     end
 end
