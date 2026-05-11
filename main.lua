@@ -19,7 +19,7 @@ local MOTD = "improve you are security"
 function _G.ADD_ADMIN(ID) table.insert(ADMINS, ID) end
 function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 
-local VERSION = '1.2.6'
+local VERSION = '1.2.6a'
 local UPDATED = '5/11/2026'
 local CHANGELOG = {        
 	    'remove nsfw commands',
