@@ -19,12 +19,11 @@ local MOTD = "improve you are security"
 function _G.ADD_ADMIN(ID) table.insert(ADMINS, ID) end
 function _G.ADD_BAN(ID) table.insert(BANS, ID) end
 
-local VERSION = '1.2.5'
-local UPDATED = '2/26/2026'
+local VERSION = '1.2.6'
+local UPDATED = '5/11/2026'
 local CHANGELOG = {        
-	    'First update in 5 months',
-	    'Changed btools command to have new tool',
-	    'Added 2 commands'
+	    'remove nsfw commands',
+	    'server version coming soon???'
 }
 
 local CREDITS = [[
@@ -1405,39 +1404,6 @@ function UNDECALSPAM(INSTANCE)
 	end
 end
 
-function CREATE_DONG(PLAYER, DONG_COLOR)
-	if PLAYER.Character:FindFirstChild('DONG') then
-		PLAYER.Character.DONG:destroy()
-	end
-	local D = new('Model', PLAYER.Character)
-	D.Name = 'DONG'
-
-	local BG = new('BodyGyro', PLAYER.Character.Torso)
-	local MAIN = new('Part', PLAYER.Character['DONG'])
-	local M1 = new('CylinderMesh', MAIN)
-	local W1 = new('Weld', PLAYER.Character.Head)
-	local P1 = new('Part', PLAYER.Character['DONG'])
-	local M2 = new('SpecialMesh', P1)
-	local W2 = new('Weld', P1)
-	local B1 = new('Part', PLAYER.Character['DONG'])
-	local M3 = new('SpecialMesh', B1)
-	local W3 = new('Weld', B1)
-	local B2 = new('Part', PLAYER.Character['DONG'])
-	local M4 = new('SpecialMesh', B2)
-	local W4 = new('Weld', B2)
-	MAIN.TopSurface = 0 MAIN.BottomSurface = 0 MAIN.Name = 'Main' MAIN.Size = Vector3.new(0.6, 2.5, 0.6) MAIN.BrickColor = BrickColor.new(DONG_COLOR) MAIN.Position = PLAYER.Character.Head.Position MAIN.CanCollide = false
-	W1.Part0 = MAIN W1.Part1 = PLAYER.Character.Head W1.C0 = CFrame.new(0, 0.25, 2.1) * CFrame.Angles(math.rad(45), 0, 0)
-	P1.Name = 'Mush' P1.BottomSurface = 0 P1.TopSurface = 0 P1.Size = Vector3.new(0.6, 0.6, 0.6) P1.CFrame = CFrame.new(MAIN.Position) P1.BrickColor = BrickColor.new('Pink') P1.CanCollide = false
-	M2.MeshType = 'Sphere'
-	W2.Part0 = MAIN W2.Part1 = P1 W2.C0 = CFrame.new(0, 1.3, 0)
-	B1.Name = 'Left Ball' B1.BottomSurface = 0 B1.TopSurface = 0 B1.CanCollide = false B1.Size = Vector3.new(1, 1, 1) B1.CFrame = CFrame.new(PLAYER.Character['Left Leg'].Position) B1.BrickColor = BrickColor.new(DONG_COLOR)
-	M3.Parent = B1 M3.MeshType = 'Sphere'
-	W3.Part0 = PLAYER.Character['Left Leg'] W3.Part1 = B1 W3.C0 = CFrame.new(0, 0.5, -0.5)
-	B2.Name = 'Right Ball' B2.BottomSurface = 0 B2.CanCollide = false B2.TopSurface = 0 B2.Size = Vector3.new(1, 1, 1) B2.CFrame = CFrame.new(PLAYER.Character['Right Leg'].Position) B2.BrickColor = BrickColor.new(DONG_COLOR)
-	M4.MeshType = 'Sphere'
-	W4.Part0 = PLAYER.Character['Right Leg'] W4.Part1 = B2 W4.C0 = CFrame.new(0, 0.5, -0.5)
-end
-
 function SCALE(C, S)
 	if tonumber(S) < 0.5 then S = 0.5 elseif tonumber(S) > 25 then S = 25 end
 
@@ -2813,29 +2779,6 @@ function(ARGS, SPEAKER)
 	end
 end)
 
-ADD_COMMAND('dong','dong [plr]',{},
-function(ARGS, SPEAKER)
-	local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
-	for i,v in pairs(PLAYERS) do
-		local PCHAR = _PLAYERS[v].Character
-		if ARGS[2] == 'black' then
-			CREATE_DONG(_PLAYERS[v], 'Brown')
-		end
-		if ARGS[2] == 'asian' then
-			CREATE_DONG(_PLAYERS[v], 'Cool yellow')
-		end
-		if ARGS[2] == 'alien' then
-			CREATE_DONG(_PLAYERS[v], 'Lime green')
-		end
-		if ARGS[2] == 'frozen' then
-			CREATE_DONG(_PLAYERS[v], 1019)
-		end
-		if not ARGS[2] then
-			CREATE_DONG(_PLAYERS[v], 'Pastel brown')
-		end
-	end
-end)
-
 ADD_COMMAND('particles','particles [plr] [id]',{'pts'},
 function(ARGS, SPEAKER)
 	local PLAYERS = GET_PLAYER(ARGS[1], SPEAKER)
@@ -2953,40 +2896,6 @@ function(ARGS, SPEAKER)
 	if ARGS[1] then
 		UNDECALSPAM(workspace)
 	end
-end)
-
-ADD_COMMAND('bang','bang [plr]',{'rape', 'sex'},
-function(ARGS, SPEAKER)
-    NOTIFY('Who are you?', 255, 50, 50)
-    wait(2)
-    NOTIFY('I am Death, said the creature.', 255, 50, 50)
-    wait(2)
-    NOTIFY('I thought that was obvious.', 255, 50, 50)
-    wait(2)
-    NOTIFY('But you are so small!', 255, 50, 50)
-    wait(2)
-    NOTIFY('Only because you are small.', 255, 50, 50)
-    wait(2)
-    NOTIFY('You are young and far from your Death, September, ...', 255, 50, 50)
-    wait(2)
-    NOTIFY('... so I seem as anything would seem if you saw it from a long way off ..', 255, 50, 50)
-    wait(2)
-    NOTIFY('... very small, very harmless.', 255, 50, 50)
-    wait(2)
-    NOTIFY('But I am always closer than I appear.', 255, 50, 50)
-    wait(2)
-    NOTIFY('As you grow, I shall grow with you ...', 255, 50, 50)
-    wait(2)
-    NOTIFY('... until at the end, I shall loom huge and dark over your bed ...', 255, 50, 50)
-    wait(2)
-    NOTIFY('... and you will shut your eyes so as not to see me.', 255, 50, 50)
-    wait(2)
-    NOTIFY('Find me.', 255, 50, 50)
-    wait(2)
-    NOTIFY('Fear me.', 255, 50, 50)
-    wait(2)
-    NOTIFY('Love me.', 255, 50, 50)
-    wait(2)
 end)
 
 ADD_COMMAND('lag','lag [plr]',{},
